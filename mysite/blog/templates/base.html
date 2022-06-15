@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+    
+        {% block title %} 
+
+        {% endblock title %}
+    </title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="{% url 'blog:post_list' %}">Ayo's Blog</a>
+  
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+         
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <sapn class="icon-bar"></sapn>
+        </button>
+      </div>
+      <ul class="nav navbar-nav navbar-right collapse navbar-collapse">
+        <li class="active"><a href="{% url 'blog:post_list' %}">Blog</a></li>
+        <li><a href="{% url 'blog:createpost' %}">Create a post</a></li>
+        <li><a href="{% url 'blog:register' %}">sign up</a></li>
+        
+      </ul>
+    </div>
+  </nav>
+  
+    {% block body %} 
+
+    {% endblock body %}
+</body>
+</html>
